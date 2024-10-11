@@ -56,7 +56,7 @@ const ContactForm = ({ existingContact, onCancel }) => {
 };
 
 ContactForm.propTypes = {
-  existingContact: PropTypes.shape({
+  editingContact: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
     email: PropTypes.string,

@@ -2,7 +2,7 @@ import React from "react";
 import ContactForm from "../ContactForm/ContactForm";
 
 import { useDispatch, useSelector } from "react-redux";
-import { editContact } from "../../Features/contacts/ContactSlice";
+import { editContact, removeContact } from "../../Features/contacts/ContactSlice";
 
 import { Button, List, ListItem } from "./ContactListStyled";
 
@@ -30,7 +30,7 @@ const ContactList = () => {
         <ContactForm />
       )}
       <List>
-        {contacts.map((contact) => {
+        {contacts.map((contact) => (
           <ListItem key={contact.id}>
             <div>
               <p>{contact.name}</p>
@@ -41,8 +41,8 @@ const ContactList = () => {
               <Button onClick={() => handleEdit(contact)}>Editar</Button>
               <Button onClick={() => handleDelete(contact.id)}>Remover</Button>
             </div>
-          </ListItem>;
-        })}
+          </ListItem>
+        ))}
       </List>
     </>
   );
